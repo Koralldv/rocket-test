@@ -1,6 +1,8 @@
 import styled from 'styled-components';
 
-const PostsListItem = styled.div`
+import { Users } from './index';
+
+const Items = styled.div`
     background-color: rgba(224, 100, 183);
     box-shadow: 0px 10px 40px 0px rgba(224, 100, 183, 1);
     border-radius: 8px;
@@ -13,5 +15,17 @@ const PostsListItem = styled.div`
         cursor: pointer;
     }
 `;
+
+function PostsListItem({ postItems, users }) {
+    return (
+        <>
+            <Items>
+                <h2>{postItems.title}</h2>
+                <p>{postItems.body}</p>
+                <Users users={users} postItems={postItems}></Users>
+            </Items>
+        </>
+    );
+}
 
 export default PostsListItem;

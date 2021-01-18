@@ -1,3 +1,4 @@
+import React from 'react';
 import styled from 'styled-components';
 
 const Input = styled.input`
@@ -18,4 +19,8 @@ const Input = styled.input`
     }
 `;
 
-export default Input;
+function InputBlock({ setSearch }) {
+    return <Input type="text" placeholder="поиск" onChange={(e) => setSearch(e.target.value)} />;
+}
+
+export default InputBlock;
